@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+body {
+  font-size: 3em;
+  background-color: black;
+  color: white;
+  padding: 1em;
+}
+h1 {
+  font-size: 1.4em;
+  font-family: "Carter One";
+  text-align: center;
+  margin: 0;
+}
+td {
+  width: 1.25em;
+  text-align: center;
+  border: solid 7px transparent;
+  opacity: .2;
+}
+td[data-piece] {
+  opacity: 1;
+}
+td[data-piece="v"],
+td[data-piece="h"],
+td[data-piece="b"] {
+  background-color: #AAA;
+  color: black;
+  vertical-align: middle;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+table tbody tr:nth-child(1) td {
+  border-top-color: #AAA;
+}
+table tbody tr:nth-child(7) td {
+  border-bottom-color: #AAA;
+}
+table tbody tr td:nth-child(7) {
+  border-right-color: #AAA;
+}
+table tbody tr td:nth-child(1) {
+  border-left-color: #AAA;
+}
+table tbody tr:nth-child(4) td:nth-child(7) {
+  border-right-color: transparent;
+}
