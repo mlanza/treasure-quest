@@ -22,6 +22,11 @@ const $move = $.pipe($keys, _.comp(t.map(function(e){
   return e.key;
 }), t.filter(_.startsWith(_, "Arrow")), t.map(_.lowerCase), t.map(_.replace(_, "arrow", ""))));
 $.sub($move, function(move){
+  if (q.solved(_.deref($state))) {
+    setTimeout(function(){
+      location.href = `/?level=${nextLevel}`;
+    }, 1000);
+  }
   _.swap($state, q.move(_, move));
   _.swap($state, q.removeTreasure);
 });

@@ -82,6 +82,10 @@ body {
   display: block;
   font-size: .8em;
 }
+#treasure-quest.solved span[data-piece="e"] {
+  opacity: 0;
+  transition: opacity .25s ease-in;
+}
 #treasure-quest.conquered #next-level {
   display: none;
 }
