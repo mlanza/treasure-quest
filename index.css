@@ -55,6 +55,8 @@ body {
   height: 9.9em;
   width: 9.9em;
   margin: 0 auto;
+  opacity: 1;
+  transition: opacity .25s ease-in;
 }
 #treasure-quest #room span {
   position: absolute;
@@ -65,8 +67,8 @@ body {
   line-height: 1.2em;
   transition: left .25s ease-in, top .25s ease-in;
 }
+#treasure-quest #room.hidden,
 #treasure-quest #room span.removed {
-  transition: opacity .25s ease-in;
   opacity: 0;
 }
 #treasure-quest #conquered,
