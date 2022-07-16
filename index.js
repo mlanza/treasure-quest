@@ -23,17 +23,34 @@ const $move = $.pipe($keys, _.comp(t.map(function(e){
 }), t.filter(_.startsWith(_, "Arrow")), t.map(_.lowerCase), t.map(_.replace(_, "arrow", ""))));
 $.sub($move, function(move){
   _.swap($state, q.move(_, move));
+  _.swap($state, q.removeTreasure);
 });
 $.sub($state, _.log);
+$.sub($state, _.comp(t.map(q.solved), t.filter(_.identity)), function(what){
+  dom.addClass(el, "solved");
+});
 $.sub($hist, function([curr, prior]){
   if (prior) {
     _.eachkv(function(what, positions){
-      _.eachIndexed(function(idx, [x, y]){
-        const [px, py] = _.getIn(prior, [what, idx]);
-        if (x !== px || y !== py) {
-          const o = dom.sel1(`[data-x='${px}'][data-y='${py}']`, room);
-          dom.attr(o, "data-x", x);
-          dom.attr(o, "data-y", y);
+      _.eachIndexed(function(idx, coords){
+        const where = _.getIn(prior, [what, idx]);
+        if (where) {
+          const [px, py] = where;
+          const o = dom.sel1(`[data-piece='${what}'][data-x='${px}'][data-y='${py}']`, room);
+          if (coords) {
+            const [x, y] = coords;
+            if (x !== px || y !== py) {
+              dom.attr(o, "data-x", x);
+              dom.attr(o, "data-y", y);
+            }
+          } else {
+            setTimeout(function(){
+              dom.addClass(o, "removed");
+              setTimeout(function(){
+                dom.omit(o);
+              }, 250);
+            }, 250);
+          }
         }
       }, positions);
     }, curr)

@@ -49,11 +49,17 @@ body {
   line-height: 1.2em;
   transition: left .25s ease-in, top .25s ease-in;
 }
+#treasure-quest #room span.removed {
+  transition: opacity .25s ease-in;
+  opacity: 0;
+}
 #treasure-quest #next-level {
-  visibility: hidden;
+  transition: opacity 1s ease-in;
+  opacity: 0;
 }
 #treasure-quest.solved #next-level {
-  visibility: visible;
+  opacity: 1;
+  font-size: .8em;
 }
 #treasure-quest #room span[data-x="-1"] {
   left: -1.1em;
