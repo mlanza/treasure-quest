@@ -71,3 +71,7 @@ $.sub($hist, function([curr, prior]){
     }, curr));
   }
 });
+
+setTimeout(function(){
+  dom.removeClass(dom.sel1("#room"), "hidden");
+}, 250);
