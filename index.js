@@ -20,15 +20,23 @@ $.sub($move, function(move){
 $.sub($state, _.log);
 $.sub($hist, function([curr, prior]){
   if (prior) {
-
+    _.eachkv(function(what, positions){
+      _.eachIndexed(function(idx, [x, y]){
+        const [px, py] = _.getIn(prior, [what, idx]);
+        if (x !== px || y !== py) {
+          const o = dom.sel1(`[data-x='${px}'][data-y='${py}']`, el);
+          dom.attr(o, "data-x", x);
+          dom.attr(o, "data-y", y);
+        }
+      }, positions);
+    }, curr)
   } else {
-    const els = _.mapkv(function(piece, vals){
+    dom.html(el, _.mapkv(function(piece, vals){
       const icon = q.icon(piece);
       return _.mapa(function([x, y]){
         return span({"data-piece": piece, "data-x": x, "data-y": y}, icon);
       }, vals);
-    }, curr);
-    dom.html(el, els);
+    }, curr));
   }
 });
 
