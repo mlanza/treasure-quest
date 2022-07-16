@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-
 body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+#treasure-quest {
+  position: relative;
   font-size: 3em;
   background-color: black;
   color: white;
-  padding: 1em;
+  padding: .5em;
+  text-align: center;
+  display: block;
+  height: auto;
+  width: auto;
 }
-h1 {
-  font-size: 1.4em;
+#treasure-quest h1,
+#treasure-quest a {
   font-family: "Carter One";
   text-align: center;
   margin: 0;
 }
-#quest {
+#treasure-quest h1 {
+  font-size: 1.4em;
+}
+#treasure-quest h1 + p {
+  font-family: monospace;
+  margin: 0;
+}
+#treasure-quest #level {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  font-size: .8em;
+}
+#treasure-quest #room {
   position: relative;
   height: 9.9em;
   width: 9.9em;
   margin: 0 auto;
 }
-#quest span {
+#treasure-quest #room span {
   position: absolute;
   height: 1.1em;
   width: 1.1em;
@@ -27,63 +49,69 @@ h1 {
   line-height: 1.2em;
   transition: left .25s ease-in, top .25s ease-in;
 }
-span[data-x="-1"] {
+#treasure-quest #next-level {
+  visibility: hidden;
+}
+#treasure-quest.solved #next-level {
+  visibility: visible;
+}
+#treasure-quest #room span[data-x="-1"] {
   left: -1.1em;
 }
-span[data-x="0"] {
+#treasure-quest #room span[data-x="0"] {
   left: 0;
 }
-span[data-x="1"] {
+#treasure-quest #room span[data-x="1"] {
   left: 1.1em;
 }
-span[data-x="2"] {
+#treasure-quest #room span[data-x="2"] {
   left: 2.2em;
 }
-span[data-x="3"] {
+#treasure-quest #room span[data-x="3"] {
   left: 3.3em;
 }
-span[data-x="4"] {
+#treasure-quest #room span[data-x="4"] {
   left: 4.4em;
 }
-span[data-x="5"] {
+#treasure-quest #room span[data-x="5"] {
   left: 5.5em;
 }
-span[data-x="6"] {
+#treasure-quest #room span[data-x="6"] {
   left: 6.6em;
 }
-span[data-x="7"] {
+#treasure-quest #room span[data-x="7"] {
   left: 7.7em;
 }
-span[data-x="8"] {
+#treasure-quest #room span[data-x="8"] {
   left: 8.8em;
 }
-span[data-y="-1"] {
+#treasure-quest #room span[data-y="-1"] {
   top: -1.1em;
 }
-span[data-y="0"] {
+#treasure-quest #room span[data-y="0"] {
   top: 0;
 }
-span[data-y="1"] {
+#treasure-quest #room span[data-y="1"] {
   top: 1.1em;
 }
-span[data-y="2"] {
+#treasure-quest #room span[data-y="2"] {
   top: 2.2em;
 }
-span[data-y="3"] {
+#treasure-quest #room span[data-y="3"] {
   top: 3.3em;
 }
-span[data-y="4"] {
+#treasure-quest #room span[data-y="4"] {
   top: 4.4em;
 }
-span[data-y="5"] {
+#treasure-quest #room span[data-y="5"] {
   top: 5.5em;
 }
-span[data-y="6"] {
+#treasure-quest #room span[data-y="6"] {
   top: 6.6em;
 }
-span[data-y="7"] {
+#treasure-quest #room span[data-y="7"] {
   top: 7.7em;
 }
-span[data-y="8"] {
+#treasure-quest #room span[data-y="8"] {
   top: 8.8em;
 }
