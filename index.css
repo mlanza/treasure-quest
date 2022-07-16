@@ -2,18 +2,23 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #36454F;
+  overflow: hidden;
 }
 #treasure-quest {
-  position: relative;
-  font-size: 3em;
-  background-color: black;
+  font-size: 2em;
   color: white;
   padding: .5em;
   text-align: center;
   display: block;
-  height: auto;
-  width: auto;
+  height: 100%;
+  margin: 0;
+}
+#treasure-quest h1 {
+  -webkit-text-stroke: .2px black;
+}
+#treasure-quest a {
+  color: gold;
 }
 #treasure-quest h1,
 #treasure-quest #conquered,
@@ -21,6 +26,16 @@ body {
   font-family: "Carter One";
   text-align: center;
   margin: 0;
+}
+#treasure-quest #instructions {
+  font-size: .6em;
+  font-family: monospace;
+  color: white;
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 #treasure-quest h1 {
   font-size: 1.4em;
@@ -56,12 +71,15 @@ body {
 }
 #treasure-quest #conquered,
 #treasure-quest #next-level {
+  margin: .5em;
   transition: opacity 1s ease-in;
   opacity: 0;
+  display: none;
 }
 #treasure-quest.conquered #conquered,
 #treasure-quest.solved #next-level {
   opacity: 1;
+  display: block;
   font-size: .8em;
 }
 #treasure-quest.conquered #next-level {
