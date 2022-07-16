@@ -22,7 +22,7 @@ const $move = $.pipe($keys, _.comp(t.map(function(e){
   return e.key;
 }), t.filter(_.startsWith(_, "Arrow")), t.map(_.lowerCase), t.map(_.replace(_, "arrow", ""))));
 $.sub($move, function(move){
-  if (q.solved(_.deref($state))) {
+  if (q.solved(_.deref($state)) && q.exists(nextLevel)) {
     setTimeout(function(){
       dom.addClass(el, "leaving");
       setTimeout(function(){
@@ -35,7 +35,8 @@ $.sub($move, function(move){
 });
 $.sub($state, _.log);
 $.sub($state, _.comp(t.map(q.solved), t.filter(_.identity)), function(what){
-  dom.addClass(el, q.exists(nextLevel) ? "solved" : "conquered");
+  dom.addClass(el, "solved");
+  q.exists(nextLevel) || dom.addClass(el, "conquered");
 });
 $.sub($hist, function([curr, prior]){
   if (prior) {
