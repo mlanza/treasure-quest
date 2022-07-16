@@ -12,38 +12,77 @@ h1 {
   text-align: center;
   margin: 0;
 }
-td {
-  width: 1.25em;
-  text-align: center;
-  border: solid 7px transparent;
-  opacity: .2;
-}
-td[data-piece] {
-  opacity: 1;
-}
-td[data-piece="v"],
-td[data-piece="h"],
-td[data-piece="b"] {
-  background-color: #AAA;
-  color: black;
-  vertical-align: middle;
-}
-table {
-  border-collapse: collapse;
+#quest {
+  position: relative;
+  height: 9.9em;
+  width: 9.9em;
   margin: 0 auto;
 }
-table tbody tr:nth-child(1) td {
-  border-top-color: #AAA;
+#quest span {
+  position: absolute;
+  height: 1.1em;
+  width: 1.1em;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2em;
 }
-table tbody tr:nth-child(7) td {
-  border-bottom-color: #AAA;
+span[data-x="-1"] {
+  left: -1.1em;
 }
-table tbody tr td:nth-child(7) {
-  border-right-color: #AAA;
+span[data-x="0"] {
+  left: 0;
 }
-table tbody tr td:nth-child(1) {
-  border-left-color: #AAA;
+span[data-x="1"] {
+  left: 1.1em;
 }
-table tbody tr:nth-child(4) td:nth-child(7) {
-  border-right-color: transparent;
+span[data-x="2"] {
+  left: 2.2em;
+}
+span[data-x="3"] {
+  left: 3.3em;
+}
+span[data-x="4"] {
+  left: 4.4em;
+}
+span[data-x="5"] {
+  left: 5.5em;
+}
+span[data-x="6"] {
+  left: 6.6em;
+}
+span[data-x="7"] {
+  left: 7.7em;
+}
+span[data-x="8"] {
+  left: 8.8em;
+}
+span[data-y="-1"] {
+  top: -1.1em;
+}
+span[data-y="0"] {
+  top: 0;
+}
+span[data-y="1"] {
+  top: 1.1em;
+}
+span[data-y="2"] {
+  top: 2.2em;
+}
+span[data-y="3"] {
+  top: 3.3em;
+}
+span[data-y="4"] {
+  top: 4.4em;
+}
+span[data-y="5"] {
+  top: 5.5em;
+}
+span[data-y="6"] {
+  top: 6.6em;
+}
+span[data-y="7"] {
+  top: 7.7em;
+}
+span[data-y="8"] {
+  top: 8.8em;
 }
