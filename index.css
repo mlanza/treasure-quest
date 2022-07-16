@@ -89,6 +89,11 @@ body {
 #treasure-quest.conquered #next-level {
   display: none;
 }
+#treasure-quest.leaving #room,
+#treasure-quest.leaving #next-level {
+  transition: opacity .25s ease-in;
+  opacity: 0;
+}
 #treasure-quest #room span[data-x="-1"] {
   left: -1.1em;
 }

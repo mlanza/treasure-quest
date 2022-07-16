@@ -24,8 +24,11 @@ const $move = $.pipe($keys, _.comp(t.map(function(e){
 $.sub($move, function(move){
   if (q.solved(_.deref($state))) {
     setTimeout(function(){
-      location.href = `/?level=${nextLevel}`;
-    }, 1000);
+      dom.addClass(el, "leaving");
+      setTimeout(function(){
+        location.href = `/?level=${nextLevel}`;
+      }, 1000);
+    }, 300);
   }
   _.swap($state, q.move(_, move));
   _.swap($state, q.removeTreasure);
