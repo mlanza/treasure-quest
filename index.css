@@ -25,6 +25,7 @@ h1 {
   margin: 0;
   text-align: center;
   line-height: 1.2em;
+  transition: left .25s ease-in, top .25s ease-in;
 }
 span[data-x="-1"] {
   left: -1.1em;
