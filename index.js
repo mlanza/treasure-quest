@@ -14,7 +14,7 @@ const room = dom.sel1("#room", el);
 const span = dom.tag('span');
 
 dom.text(dom.sel1("#level span", el), level);
-dom.attr(dom.sel1("#next-level", el), "href", `?level=${nextLevel}`)
+dom.attr(dom.sel1("#next-level", el), "href", `?level=${nextLevel}`);
 dom.text(dom.sel1("#next-level span", el), nextLevel);
 
 const $keys = $.chan(document, "keydown");
@@ -27,7 +27,7 @@ $.sub($move, function(move){
 });
 $.sub($state, _.log);
 $.sub($state, _.comp(t.map(q.solved), t.filter(_.identity)), function(what){
-  dom.addClass(el, "solved");
+  dom.addClass(el, q.exists(nextLevel) ? "solved" : "conquered");
 });
 $.sub($hist, function([curr, prior]){
   if (prior) {

@@ -16,6 +16,7 @@ body {
   width: auto;
 }
 #treasure-quest h1,
+#treasure-quest #conquered,
 #treasure-quest a {
   font-family: "Carter One";
   text-align: center;
@@ -53,13 +54,18 @@ body {
   transition: opacity .25s ease-in;
   opacity: 0;
 }
+#treasure-quest #conquered,
 #treasure-quest #next-level {
   transition: opacity 1s ease-in;
   opacity: 0;
 }
+#treasure-quest.conquered #conquered,
 #treasure-quest.solved #next-level {
   opacity: 1;
   font-size: .8em;
+}
+#treasure-quest.conquered #next-level {
+  display: none;
 }
 #treasure-quest #room span[data-x="-1"] {
   left: -1.1em;
