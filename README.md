@@ -2,7 +2,7 @@
 
 This is an an unofficial, digital rendition of the sold out [toy puzzle](https://www.amazon.ca/ThinkFun-3000-Treasure-Quest/dp/B000NE72XG) published by [ThinkFun Games](https://www.thinkfun.com), a demonstration of how to program using a [functional core, imperative shell](https://betterways.dev/functional-core-imperative-shell).
 
-![Treasure Quest](http://www.mainankreatif.com/35-416-thickbox/treasure-quest.jpg)
+![Treasure Quest](./images/treasure-quest.jpeg)
 
 ## License
 The MIT License (MIT)
