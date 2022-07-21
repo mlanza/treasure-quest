@@ -14,6 +14,7 @@ const room = dom.sel1("#room", el);
 const span = dom.tag('span');
 const icon = q.icon(level);
 
+dom.text(dom.sel1("#desc", el), q.desc(level));
 dom.text(dom.sel1("#level span", el), level);
 dom.attr(dom.sel1("#next-level", el), "href", `?level=${nextLevel}`);
 dom.text(dom.sel1("#next-level span", el), nextLevel);
