@@ -12,6 +12,7 @@ const $hist = $.hist($state);
 const el = dom.sel1("#treasure-quest");
 const room = dom.sel1("#room", el);
 const span = dom.tag('span');
+const icon = q.icon(level);
 
 dom.text(dom.sel1("#level span", el), level);
 dom.attr(dom.sel1("#next-level", el), "href", `?level=${nextLevel}`);
@@ -65,9 +66,8 @@ $.sub($hist, function([curr, prior]){
     }, curr)
   } else {
     dom.html(room, _.mapkv(function(piece, vals){
-      const icon = q.icon(piece);
       return _.mapa(function([x, y]){
-        return span({"data-piece": piece, "data-x": x, "data-y": y}, icon);
+        return span({"data-piece": piece, "data-x": x, "data-y": y}, icon(piece));
       }, vals);
     }, curr));
   }
