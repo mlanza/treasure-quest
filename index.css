@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #36454F;
   overflow: hidden;
+  font-family: monospace;
 }
 #treasure-quest {
   font-size: 2em;
@@ -40,15 +41,18 @@ body {
 #treasure-quest h1 {
   font-size: 1.4em;
 }
-#treasure-quest h1 + p {
-  font-family: monospace;
+#treasure-quest #level,
+#treasure-quest #desc {
+  position: absolute;
+  font-size: .8em;
+  top: .5em;
   margin: 0;
 }
 #treasure-quest #level {
-  position: absolute;
-  top: .5em;
   right: .5em;
-  font-size: .8em;
+}
+#treasure-quest #desc {
+  left: .5em;
 }
 #treasure-quest #room {
   position: relative;
