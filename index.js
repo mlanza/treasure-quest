@@ -1,9 +1,11 @@
-import _ from "./lib/@atomic/core.js";
-import dom from "./lib/@atomic/dom.js";
-import t from "./lib/@atomic/transducers.js";
-import $ from "./lib/@atomic/reactives.js";
+import _ from "./lib/atomic_/core.js";
+import dom from "./lib/atomic_/dom.js";
+import t from "./lib/atomic_/transducers.js";
+import $ from "./lib/atomic_/reactives.js";
 import * as cmd from "./lib/cmd.js";
-import * as q from "./lib/treasure-quest.js";
+import * as q from "./lib/treasure-quest.js";  //the functional core and...
+
+//the imperative shell!
 
 const level = parseInt(new URLSearchParams(location.search).get("level") || 0);
 const nextLevel = level + 1;
