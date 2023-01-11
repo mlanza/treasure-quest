@@ -30,7 +30,7 @@ $.sub($move, function(move){
     setTimeout(function(){
       dom.addClass(el, "leaving");
       setTimeout(function(){
-        location.href = `/?level=${nextLevel}`;
+        location.href = `${location.origin}${location.pathname}/?level=${nextLevel}`;
       }, 1000);
     }, 300);
   }
