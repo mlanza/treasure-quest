@@ -1,9 +1,8 @@
-import _ from "./lib/atomic_/core.js";
-import dom from "./lib/atomic_/dom.js";
-import t from "./lib/atomic_/transducers.js";
-import $ from "./lib/atomic_/reactives.js";
-import * as cmd from "./lib/cmd.js";
-import * as q from "./lib/treasure-quest.js";  //the functional core and...
+import _ from "./libs/atomic_/core.js";
+import $ from "./libs/atomic_/shell.js";
+import dom from "./libs/atomic_/dom.js";
+import {reg} from "./libs/cmd.js";
+import * as q from "./libs/treasure-quest.js";  //the functional core and...
 
 //the imperative shell!
 
@@ -22,9 +21,12 @@ dom.attr(dom.sel1("#next-level", el), "href", `?level=${nextLevel}`);
 dom.text(dom.sel1("#next-level span", el), nextLevel);
 
 const $keys = $.chan(document, "keydown");
-const $move = $.pipe($keys, _.comp(t.map(function(e){
+const $move = $.pipe($keys, _.comp(_.map(function(e){
   return e.key;
-}), t.filter(_.startsWith(_, "Arrow")), t.map(_.lowerCase), t.map(_.replace(_, "arrow", ""))));
+}), _.filter(_.startsWith(_, "Arrow")), _.map(_.lowerCase), _.map(_.replace(_, "arrow", ""))));
+
+reg({q, $state, $hist, $keys, $move});
+
 $.sub($move, function(move){
   if (q.solved(_.deref($state)) && q.exists(nextLevel)) {
     setTimeout(function(){
@@ -34,18 +36,19 @@ $.sub($move, function(move){
       }, 1000);
     }, 300);
   }
-  _.swap($state, q.move(_, move));
-  _.swap($state, q.removeTreasure);
+  $.swap($state, q.move(_, move));
+  $.swap($state, q.removeTreasure);
 });
-$.sub($state, _.log);
-$.sub($state, _.comp(t.map(q.solved), t.filter(_.identity)), function(what){
+
+$.sub($state, _.comp(_.map(q.solved), _.filter(_.identity)), function(what){
   dom.addClass(el, "solved");
   q.exists(nextLevel) || dom.addClass(el, "conquered");
 });
+
 $.sub($hist, function([curr, prior]){
   if (prior) {
-    _.eachkv(function(what, positions){
-      _.eachIndexed(function(idx, coords){
+    $.eachkv(function(what, positions){
+      $.eachIndexed(function(idx, coords){
         const where = _.getIn(prior, [what, idx]);
         if (where) {
           const [px, py] = where;
