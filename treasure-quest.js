@@ -1,4 +1,4 @@
-import _ from "./atomic_/core.js";
+import _ from "./libs/atomic_/core.js";
 import {levels} from "./levels.js"; // level data
 
 //the pure part of the app is here.
