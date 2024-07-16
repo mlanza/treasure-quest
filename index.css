@@ -160,3 +160,20 @@ body {
 #treasure-quest #room span[data-y="8"] {
   top: 8.8em;
 }
+
+
+#treasure-quest #room span[data-piece="h"],
+#treasure-quest #room span[data-piece="v"] {
+  height: .97em;
+  width: .97em;
+  margin: 2px;
+  line-height: 22px;
+  background-color: slategray;
+  vertical-align: top;
+  outline: solid 1px black;
+  overflow: hidden;
+  border-radius: 3px;
+}
+#treasure-quest #room span[data-piece="h"] {
+  background-color: tan;
+}
