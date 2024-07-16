@@ -4,7 +4,7 @@ This is an an unofficial, digital rendition of the sold out [toy puzzle](https:/
 
 ![Treasure Quest](./images/treasure-quest.jpeg)
 
-See [demo](https://doesideas.com/programming/treasure-quest/).
+See [demo](https://doesideas.com/treasure-quest/?monitor=*).
 
 ## License
 The MIT License (MIT)
